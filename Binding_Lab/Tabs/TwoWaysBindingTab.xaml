@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="Binding_Lab.Tabs.TwoWaysBindingTab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Binding_Lab.Tabs"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="600">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="Двухсторонняя привязка TextBox:"/>
+        <TextBox Grid.Row="0" Grid.Column="1" x:Name="TwoWayTextBox" 
+                 Text="{Binding TwoWayText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                 Margin="5"/>
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Slider (TwoWay):"/>
+        <Slider Grid.Row="1" Grid.Column="1" x:Name="TwoWaySlider"
+                Minimum="0" Maximum="100" Value="{Binding TwoWayValue, Mode=TwoWay}"
+                Margin="5"/>
+
+        <Label Grid.Row="2" Grid.Column="0" Content="ProgressBar (OneWay):"/>
+        <ProgressBar Grid.Row="2" Grid.Column="1" x:Name="TwoWayProgressBar"
+                     Minimum="0" Maximum="100" Value="{Binding TwoWayValue}"
+                     Height="20" Margin="5"/>
+
+        <Label Grid.Row="3" Grid.Column="0" Content="Log TextBox (OneWayToSource):"/>
+        <TextBox Grid.Row="3" Grid.Column="1" x:Name="LogTextBox" 
+                 Text="{Binding Log, Mode=OneWayToSource}" 
+                 IsReadOnly="True" Margin="5" Background="LightGray"/>
+
+        <TextBlock Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="5"
+                   TextWrapping="Wrap" TextAlignment="Center">
+            <Run Text="TwoWay: изменения в UI и VM синхронизированы"/><LineBreak/>
+            <Run Text="OneWayToSource: только из UI в VM"/><LineBreak/>
+            <Run Text="OneWay: только из VM в UI"/>
+        </TextBlock>
+    </Grid>
+</UserControl>

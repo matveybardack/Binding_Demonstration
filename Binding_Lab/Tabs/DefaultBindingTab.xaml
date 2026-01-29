@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="Binding_Lab.Tabs.DefaultBindingTab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Binding_Lab.Tabs"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="600">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="TextBox (привязка по умолчанию):"/>
+        <TextBox Grid.Row="0" Grid.Column="1" x:Name="DefaultTextBox" 
+                 Text="{Binding DefaultText}" Margin="5"/>
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Numeric TextBox:"/>
+        <TextBox Grid.Row="1" Grid.Column="1" x:Name="NumericTextBox" 
+                 Text="{Binding DefaultNumber}" Margin="5"/>
+
+        <Label Grid.Row="2" Grid.Column="0" Content="CheckBox:"/>
+        <CheckBox Grid.Row="2" Grid.Column="1" x:Name="DefaultCheckBox" 
+                  IsChecked="{Binding DefaultFlag}" Margin="5"/>
+
+        <Label Grid.Row="3" Grid.Column="0" Content="ComboBox:"/>
+        <ComboBox Grid.Row="3" Grid.Column="1" x:Name="DefaultComboBox" 
+                  SelectedIndex="0" Margin="5">
+            <ComboBoxItem>Option 1</ComboBoxItem>
+            <ComboBoxItem>Option 2</ComboBoxItem>
+        </ComboBox>
+
+        <TextBlock Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="5"
+                   TextWrapping="Wrap" TextAlignment="Center">
+            <Run Text="Привязка по умолчанию = TwoWay для TextBox.Text"/><LineBreak/>
+            <Run Text="OneWay для остальных свойств"/>
+        </TextBlock>
+    </Grid>
+</UserControl>
