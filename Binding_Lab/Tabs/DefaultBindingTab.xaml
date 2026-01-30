@@ -6,42 +6,17 @@
              xmlns:local="clr-namespace:Binding_Lab.Tabs"
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="600">
-    <Grid Margin="10">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-
-        <Label Grid.Row="0" Grid.Column="0" Content="TextBox (привязка по умолчанию):"/>
-        <TextBox Grid.Row="0" Grid.Column="1" x:Name="DefaultTextBox" 
-                 Text="{Binding DefaultText}" Margin="5"/>
-
-        <Label Grid.Row="1" Grid.Column="0" Content="Numeric TextBox:"/>
-        <TextBox Grid.Row="1" Grid.Column="1" x:Name="NumericTextBox" 
-                 Text="{Binding DefaultNumber}" Margin="5"/>
-
-        <Label Grid.Row="2" Grid.Column="0" Content="CheckBox:"/>
-        <CheckBox Grid.Row="2" Grid.Column="1" x:Name="DefaultCheckBox" 
-                  IsChecked="{Binding DefaultFlag}" Margin="5"/>
-
-        <Label Grid.Row="3" Grid.Column="0" Content="ComboBox:"/>
-        <ComboBox Grid.Row="3" Grid.Column="1" x:Name="DefaultComboBox" 
-                  SelectedIndex="0" Margin="5">
-            <ComboBoxItem>Option 1</ComboBoxItem>
-            <ComboBoxItem>Option 2</ComboBoxItem>
-        </ComboBox>
-
-        <TextBlock Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="5"
-                   TextWrapping="Wrap" TextAlignment="Center">
-            <Run Text="Привязка по умолчанию = TwoWay для TextBox.Text"/><LineBreak/>
-            <Run Text="OneWay для остальных свойств"/>
-        </TextBlock>
-    </Grid>
+    <UniformGrid Margin="10" Rows="4" Columns="4">
+        <!--Привязка textbox (TwoWay)-->
+        <Label Content="Default TextBox 1:"/>
+        <TextBox Text="{Binding DefaultText, UpdateSourceTrigger=PropertyChanged}" Margin="5" VerticalAlignment="Top"/>
+        <Label Content="Log TextBox 1:"/>
+        <TextBlock Text="{Binding DefaultText, UpdateSourceTrigger=PropertyChanged}" Margin="5" VerticalAlignment="Top"/>
+        
+        <!-- Привязка CheckBox ()-->
+        <Label Content="DefaultCheckBox"/>
+        <CheckBox IsChecked="{Binding DefaultFlag}" Content="Check me" Margin="5" VerticalAlignment="Top"/>
+        <Label Content="Log CheckBox:"/>
+        <CheckBox IsChecked="{Binding DefaultFlag}" Content="I`m checked?" Margin="5" VerticalAlignment="Top"/>
+    </UniformGrid>
 </UserControl>
