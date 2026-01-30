@@ -3,7 +3,7 @@
 public class DefaultBindingViewModel : INotifyPropertyChanged
 {
     private string _defaultText = "Текст по умолчанию";
-    private int _defaultNumber = 42;
+    private int _defaultprogress= 42;
     private bool _defaultFlag = true;
 
     public string DefaultText
@@ -12,10 +12,10 @@ public class DefaultBindingViewModel : INotifyPropertyChanged
         set { _defaultText = value; OnPropertyChanged(); }
     }
 
-    public int DefaultNumber
+    public int DefaultProgress
     {
-        get => _defaultNumber;
-        set { _defaultNumber = value; OnPropertyChanged(); }
+        get => _defaultprogress;
+        set { _defaultprogress = value; OnPropertyChanged(); }
     }
 
     public bool DefaultFlag

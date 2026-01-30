@@ -13,10 +13,20 @@
         <Label Content="Log TextBox 1:"/>
         <TextBlock Text="{Binding DefaultText, UpdateSourceTrigger=PropertyChanged}" Margin="5" VerticalAlignment="Top"/>
         
-        <!-- Привязка CheckBox ()-->
-        <Label Content="DefaultCheckBox"/>
+        <!-- Привязка CheckBox (TwoWay)-->
+        <Label Content="DefaultCheckBox:"/>
         <CheckBox IsChecked="{Binding DefaultFlag}" Content="Check me" Margin="5" VerticalAlignment="Top"/>
         <Label Content="Log CheckBox:"/>
-        <CheckBox IsChecked="{Binding DefaultFlag}" Content="I`m checked?" Margin="5" VerticalAlignment="Top"/>
+        <CheckBox IsChecked="{Binding DefaultFlag}" Content="I`m checked?" Margin="5" VerticalAlignment="Top" IsEnabled="False"/> <!-- Тут Привязка Oneway для демонстрации-->
+        
+        <!-- Привязка  ProgressBar (OneWay)-->
+        <Label Content="DefaultProgressBar:"/>
+        <ProgressBar x:Name="DefaultProgressBar" Value="{Binding DefaultProgress}" Height="20" Margin="5" VerticalAlignment="Top"/>
+        <Label Content="Log ProgressBar (direct):"/>
+        <TextBlock Text="{Binding Value, ElementName=DefaultProgressBar}" Margin="5" VerticalAlignment="Top"/>
+
+        <!--Привязка картинки (OneTime)-->
+        <Label Content="DefaultImage:" />
+        <Image Source="/Resourse/no_resourse.jpg" Margin="5"/>
     </UniformGrid>
 </UserControl>
