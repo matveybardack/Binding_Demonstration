@@ -24,8 +24,8 @@
         <TextBox x:Name="OnlyNumber" Text="{Binding SourceValue, UpdateSourceTrigger=PropertyChanged}" 
                  Margin="5,15,5,0" VerticalAlignment="Top"/>
 
-        <!-- Log Operation -->
-        <Label Content="Square Number:" Margin="22,15,0,0" VerticalAlignment="Top"/>
+        <!-- Log SliderNumber -->
+        <Label Content="Slider change number:" Margin="22,15,0,0" VerticalAlignment="Top"/>
         <Slider Minimum="0" Maximum="100" 
                 Value="{Binding SourceValue, Mode=OneWay}" 
                 Margin="5,15,5,0" VerticalAlignment="Top"/>

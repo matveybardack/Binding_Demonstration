@@ -2,26 +2,47 @@
 
 public class TriggersViewModel : INotifyPropertyChanged
 {
-    private string _triggerText = "";
-    private bool _isEnabled = true;
-    private int _value = 0;
+    private string _defaultTriggerText = "DefaultTriggerText";
+    private string _propertyChangedText = "PropertyChangedText";
+    private string _explicitText = "ExplicitText";
+    private string _lostFocusText = "LostFocusText";
+    private int _sliderValue = 50;
+    private bool _checkBoxValue = false;
 
-    public string TriggerText
+    public bool CheckBoxValue
     {
-        get => _triggerText;
-        set { _triggerText = value; OnPropertyChanged(); }
+        get => _checkBoxValue;
+        set { _checkBoxValue = value; OnPropertyChanged(); }
     }
 
-    public bool IsEnabled
+    public int SliderValue
     {
-        get => _isEnabled;
-        set { _isEnabled = value; OnPropertyChanged(); }
+        get => _sliderValue;
+        set { _sliderValue = value; OnPropertyChanged(); }
     }
 
-    public int Value
+    public string LostFocusText
     {
-        get => _value;
-        set { _value = value; OnPropertyChanged(); }
+        get => _lostFocusText;
+        set { _lostFocusText = value; OnPropertyChanged(); }
+    }
+
+    public string ExplicitText
+    {
+        get => _explicitText;
+        set { _explicitText = value; OnPropertyChanged(); }
+    }
+
+    public string PropertyChangedText
+    {
+        get => _propertyChangedText;
+        set { _propertyChangedText = value; OnPropertyChanged(); }
+    }
+
+    public string DefaultTriggerText
+    {
+        get => _defaultTriggerText;
+        set { _defaultTriggerText = value; OnPropertyChanged(); }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;

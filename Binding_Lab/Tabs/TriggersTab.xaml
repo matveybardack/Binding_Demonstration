@@ -4,117 +4,56 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Binding_Lab.Tabs"
+             xmlns:vm="clr-namespace:Binding_Lab.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Margin="10">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="0" Content="Property Trigger TextBox:"/>
-        <TextBox Grid.Row="0" Grid.Column="1" x:Name="PropertyTriggerTextBox" 
-                 Text="{Binding TriggerText}" Margin="5">
-            <TextBox.Style>
-                <Style TargetType="TextBox">
-                    <Style.Triggers>
-                        <Trigger Property="Text" Value="ACTIVE">
-                            <Setter Property="Background" Value="LightGreen"/>
-                            <Setter Property="Foreground" Value="DarkGreen"/>
-                            <Setter Property="FontWeight" Value="Bold"/>
-                        </Trigger>
-                        <Trigger Property="Text" Value="">
-                            <Setter Property="ToolTip" Value="Поле не может быть пустым"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </TextBox.Style>
-        </TextBox>
+    <UniformGrid Margin="10" Rows="7" Columns="4">
+        <!-- Default UpdateSourceTrigger (PropertyChanged для TextBox.Text) -->
+        <Label Content="Default Trigger TextBox:"/>
+        <TextBox Text="{Binding DefaultTriggerText}" Margin="5" VerticalAlignment="Top"/>
+        <Label Content="Log Default:"/>
+        <TextBlock Text="{Binding DefaultTriggerText}" Margin="5" VerticalAlignment="Top"/>
 
-        <Label Grid.Row="1" Grid.Column="0" Content="Data Trigger TextBox:"/>
-        <TextBox Grid.Row="1" Grid.Column="1" x:Name="DataTriggerTextBox" 
-                 IsEnabled="{Binding IsEnabled}" Text="Data Trigger Demo" Margin="5">
-            <TextBox.Style>
-                <Style TargetType="TextBox">
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding IsEnabled}" Value="False">
-                            <Setter Property="Background" Value="LightGray"/>
-                            <Setter Property="Opacity" Value="0.7"/>
-                            <Setter Property="ToolTip" Value="Элемент отключен"/>
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </TextBox.Style>
-        </TextBox>
+        <!-- PropertyChanged Trigger -->
+        <Label Content="PropertyChanged Trigger:"/>
+        <TextBox Text="{Binding PropertyChangedText, UpdateSourceTrigger=PropertyChanged}" 
+                 Margin="5" VerticalAlignment="Top"/>
+        <Label Content="Log PropertyChanged:"/>
+        <TextBlock Text="{Binding PropertyChangedText}" Margin="5" VerticalAlignment="Top"/>
 
-        <Label Grid.Row="2" Grid.Column="0" Content="Event Trigger Button:"/>
-        <Button Grid.Row="2" Grid.Column="1" x:Name="EventTriggerButton" 
-                Content="Нажми меня" Margin="5">
-            <Button.Triggers>
-                <EventTrigger RoutedEvent="Button.Click">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <DoubleAnimation Storyboard.TargetProperty="Opacity"
-                                             From="1.0" To="0.5" Duration="0:0:0.3"
-                                             AutoReverse="True"/>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-            </Button.Triggers>
-        </Button>
+        <!-- Explicit Trigger -->
+        <Label Content="Explicit Trigger TextBox:"/>
+        <TextBox x:Name="ExplicitTextBox" Text="{Binding ExplicitText, UpdateSourceTrigger=Explicit}" 
+                 Margin="5" VerticalAlignment="Top"/>
+        <Label Content="Log Explicit:"/>
+        <TextBlock Text="{Binding ExplicitText}" Margin="5" VerticalAlignment="Top"/>
 
-        <Label Grid.Row="3" Grid.Column="0" Content="MultiTrigger TextBox:"/>
-        <TextBox Grid.Row="3" Grid.Column="1" x:Name="MultiTriggerTextBox" 
-                 Text="{Binding Value, StringFormat='Значение: {0}'}" Margin="5">
-            <TextBox.Style>
-                <Style TargetType="TextBox">
-                    <Style.Triggers>
-                        <MultiTrigger>
-                            <MultiTrigger.Conditions>
-                                <Condition Property="IsEnabled" Value="True"/>
-                                <Condition Property="Text" Value="Значение: 100"/>
-                            </MultiTrigger.Conditions>
-                            <Setter Property="Background" Value="Gold"/>
-                            <Setter Property="FontWeight" Value="Bold"/>
-                        </MultiTrigger>
-                    </Style.Triggers>
-                </Style>
-            </TextBox.Style>
-        </TextBox>
+        <!-- LostFocus Trigger -->
+        <Label Content="LostFocus Trigger TextBox:"/>
+        <TextBox Text="{Binding LostFocusText, UpdateSourceTrigger=LostFocus}" 
+                 Margin="5" VerticalAlignment="Top"/>
+        <Label Content="Log LostFocus:"/>
+        <TextBlock Text="{Binding LostFocusText}" Margin="5" VerticalAlignment="Top"/>
 
-        <Label Grid.Row="4" Grid.Column="0" Content="MultiDataTrigger CheckBox:"/>
-        <CheckBox Grid.Row="4" Grid.Column="1" x:Name="MultiDataTriggerCheckBox"
-                  Content="Включить триггер" IsChecked="{Binding IsEnabled}" Margin="5">
-            <CheckBox.Style>
-                <Style TargetType="CheckBox">
-                    <Style.Triggers>
-                        <MultiDataTrigger>
-                            <MultiDataTrigger.Conditions>
-                                <Condition Binding="{Binding IsEnabled}" Value="True"/>
-                                <Condition Binding="{Binding Value}" Value="50"/>
-                            </MultiDataTrigger.Conditions>
-                            <Setter Property="Foreground" Value="Blue"/>
-                            <Setter Property="FontStyle" Value="Italic"/>
-                        </MultiDataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </CheckBox.Style>
-        </CheckBox>
+        <!-- Кнопка для Explicit триггера -->
+        <Label Content="Apply Explicit:"/>
+        <Button Content="Применить" Click="ApplyExplicitButton_Click" 
+                Margin="5" VerticalAlignment="Top"/>
 
-        <TextBlock Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Margin="5"
-                   TextWrapping="Wrap" TextAlignment="Center">
-            <Run Text="PropertyTrigger: реагирует на свойство UI элемента"/><LineBreak/>
-            <Run Text="DataTrigger: реагирует на свойство данных (Binding)"/><LineBreak/>
-            <Run Text="EventTrigger: реагирует на событие"/><LineBreak/>
-            <Run Text="MultiTrigger/MultiDataTrigger: несколько условий"/>
-        </TextBlock>
-    </Grid>
+        <!-- Slider для демонстрации PropertyChanged -->
+        <Label Content="Slider (PropertyChanged):"/>
+        <Slider Value="{Binding SliderValue, UpdateSourceTrigger=PropertyChanged}" 
+                Minimum="0" Maximum="100" Margin="5" VerticalAlignment="Top"/>
+        <Label Content="Log Slider:"/>
+        <TextBlock Text="{Binding SliderValue, StringFormat='{}{0:F1}'}" 
+                   Margin="5" VerticalAlignment="Top"/>
+
+        <!-- CheckBox с LostFocus -->
+        <Label Content="CheckBox (LostFocus):"/>
+        <CheckBox IsChecked="{Binding CheckBoxValue, UpdateSourceTrigger=LostFocus}" 
+                  Content="Отметь меня" Margin="5" VerticalAlignment="Top"/>
+        <Label Content="Log CheckBox:"/>
+        <TextBlock Text="{Binding CheckBoxValue}" Margin="5" VerticalAlignment="Top"/>
+    </UniformGrid>
 </UserControl>

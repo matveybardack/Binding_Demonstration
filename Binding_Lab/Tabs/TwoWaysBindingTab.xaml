@@ -7,44 +7,23 @@
              xmlns:vm="clr-namespace:Binding_Lab.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="600">
-    <Grid Margin="10">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+    <UniformGrid Margin="10" Rows="4" Columns="4">
+        <!--Привязка textbox (TwoWay)-->
+        <Label Content="TwoWay TextBox 1:"/>
+        <TextBox Text="{Binding TwoWayText, UpdateSourceTrigger=PropertyChanged}" Margin="5" VerticalAlignment="Top"/>
+        <Label Content="Log TextBox 1:"/>
+        <TextBox Text="{Binding TwoWayText, UpdateSourceTrigger=PropertyChanged}" Margin="5" VerticalAlignment="Top"/>
 
-        <Label Grid.Row="0" Grid.Column="0" Content="Двухсторонняя привязка TextBox:"/>
-        <TextBox Grid.Row="0" Grid.Column="1" x:Name="TwoWayTextBox" 
-                 Text="{Binding TwoWayText, Mode=TwoWay}" 
-                 Margin="5"/>
-
-        <Label Grid.Row="1" Grid.Column="0" Content="Slider (TwoWay):"/>
-        <Slider Grid.Row="1" Grid.Column="1" x:Name="TwoWaySlider"
-                Minimum="0" Maximum="100" Value="{Binding TwoWayValue, Mode=TwoWay}"
-                Margin="5"/>
-
-        <Label Grid.Row="2" Grid.Column="0" Content="ProgressBar (OneWay):"/>
-        <ProgressBar Grid.Row="2" Grid.Column="1" x:Name="TwoWayProgressBar"
-                     Minimum="0" Maximum="100" Value="{Binding TwoWayValue}"
-                     Height="20" Margin="5"/>
-
-        <Label Grid.Row="3" Grid.Column="0" Content="Log TextBox (OneWayToSource):"/>
-        <TextBox Grid.Row="3" Grid.Column="1" x:Name="LogTextBox" 
-                 Text="{Binding Log, Mode=OneWayToSource}" 
-                 IsReadOnly="True" Margin="5" Background="LightGray"/>
-
-        <TextBlock Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="5"
-                   TextWrapping="Wrap" TextAlignment="Center">
-            <Run Text="TwoWay: изменения в UI и VM синхронизированы"/><LineBreak/>
-            <Run Text="OneWayToSource: только из UI в VM"/><LineBreak/>
-            <Run Text="OneWay: только из VM в UI"/>
-        </TextBlock>
-    </Grid>
+        <!-- Привязка CheckBox (TwoWay)-->
+        <Label Content="TwoWayCheckBox:"/>
+        <CheckBox IsChecked="{Binding TwoWayFlag}" Content="Check me" Margin="5" VerticalAlignment="Top"/>
+        <Label Content="Log TwoWayCheckBox:"/>
+        <CheckBox IsChecked="{Binding TwoWayFlag}" Content="I`m checked?" Margin="5" VerticalAlignment="Top"/>
+        
+        <!-- Привязка  ProgressBar (TwoWay)-->
+        <Label Content="TwoWay ProgressBar:"/>
+        <TextBox Text="{Binding TwoWayValue, UpdateSourceTrigger=PropertyChanged}" Margin="5" VerticalAlignment="Top"/>
+        <Label Content="DefaultProgressBar:"/>
+        <ProgressBar x:Name="DefaultProgressBar" Value="{Binding TwoWayValue, UpdateSourceTrigger=PropertyChanged}" Height="20" Margin="5" VerticalAlignment="Top"/>
+    </UniformGrid>
 </UserControl>
