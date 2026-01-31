@@ -5,7 +5,6 @@ public class OneWayBindingViewModel : INotifyPropertyChanged
 {
     private string _sourceText = "Источник данных";
     private int _sourceValue = 75;
-    private int _counter = 0;
 
     public string SourceText
     {
@@ -16,16 +15,12 @@ public class OneWayBindingViewModel : INotifyPropertyChanged
     public int SourceValue
     {
         get => _sourceValue;
-        set { _sourceValue = value; OnPropertyChanged(); }
+        set { 
+            _sourceValue = value; 
+            OnPropertyChanged(); 
+        }
     }
 
-    public string DisplayText => $"Счетчик: {_counter}, Значение: {_sourceValue}";
-
-    public void UpdateCounter()
-    {
-        _counter++;
-        OnPropertyChanged(nameof(DisplayText));
-    }
 
     public event PropertyChangedEventHandler PropertyChanged;
     protected void OnPropertyChanged([CallerMemberName] string name = null)

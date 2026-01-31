@@ -6,38 +6,27 @@
              xmlns:local="clr-namespace:Binding_Lab.Tabs"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Margin="10">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-
-        <Label Grid.Row="0" Grid.Column="0" Content="OneTime TextBox 1:"/>
-        <TextBox Grid.Row="0" Grid.Column="1" x:Name="OneTimeTextBox1" 
+    <UniformGrid Rows="2" Columns="4" 
+        Margin="10">
+        <!-- OneTime TextBox 1 -->
+        <Label Content="OneTime TextBox 1:" Margin="0,0,3,15" VerticalAlignment="Top"/>
+        <TextBox x:Name="OneTimeTextBox1" 
                  Text="{Binding InitialText, Mode=OneTime}" 
-                 Margin="5" Background="LightGray"/>
+                 Margin="5,0,5,0" VerticalAlignment="Top"/>
 
-        <Label Grid.Row="1" Grid.Column="0" Content="OneTime TextBox 2:"/>
-        <TextBox Grid.Row="1" Grid.Column="1" x:Name="OneTimeTextBox2" 
-                 Text="{Binding InitialNumber, Mode=OneTime}" 
-                 Margin="5" Background="LightGray"/>
+        <!-- Log TextBox 1 -->
+        <Label Content="Log TextBox 1:" Margin="22,0,0,15" VerticalAlignment="Top"/>
+        <TextBlock Text="{Binding InitialText, UpdateSourceTrigger=PropertyChanged}" 
+                   Margin="5,0,5,0" VerticalAlignment="Top"/>
+        
+        <!-- OneTime Operation-->
+        <Label Content="OneTime Operation:" Margin="0,15,3,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="OnlyNumber" Text="{Binding InitialNumber, Mode=OneTime}" 
+                 Margin="5,15,5,0" VerticalAlignment="Top"/>
 
-        <Label Grid.Row="2" Grid.Column="0" Content="Label (OneTime):"/>
-        <Label Grid.Row="2" Grid.Column="1" x:Name="OneTimeLabel" 
-               Content="{Binding InitialText, Mode=OneTime}" 
-               Margin="5" BorderBrush="Gray" BorderThickness="1"/>
-
-        <TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="5"
-                   TextWrapping="Wrap" TextAlignment="Center">
-            <Run Text="OneTime: привязка только при инициализации"/><LineBreak/>
-            <Run Text="Изменения в VM не отражаются в UI"/><LineBreak/>
-            <Run Text="Полезно для статических данных"/>
-        </TextBlock>
-    </Grid>
+        <!-- Log Operation -->
+        <Label Content="Square Number:" Margin="22,15,0,0" VerticalAlignment="Top"/>
+        <TextBlock Text="{Binding InitialNumberSquared, UpdateSourceTrigger=PropertyChanged}" 
+                   Margin="5,15,5,0" VerticalAlignment="Top"/>
+    </UniformGrid>
 </UserControl>
