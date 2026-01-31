@@ -1,53 +1,24 @@
-﻿namespace Binding_Lab.ViewModels;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-public class TriggersViewModel : INotifyPropertyChanged
+namespace Binding_Lab.ViewModels;
+
+public partial class TriggersViewModel : ObservableObject
 {
+    [ObservableProperty]
     private string _defaultTriggerText = "DefaultTriggerText";
+
+    [ObservableProperty]
     private string _propertyChangedText = "PropertyChangedText";
+
+    [ObservableProperty]
     private string _explicitText = "ExplicitText";
+
+    [ObservableProperty]
     private string _lostFocusText = "LostFocusText";
+
+    [ObservableProperty]
     private int _sliderValue = 50;
+
+    [ObservableProperty]
     private bool _checkBoxValue = false;
-
-    public bool CheckBoxValue
-    {
-        get => _checkBoxValue;
-        set { _checkBoxValue = value; OnPropertyChanged(); }
-    }
-
-    public int SliderValue
-    {
-        get => _sliderValue;
-        set { _sliderValue = value; OnPropertyChanged(); }
-    }
-
-    public string LostFocusText
-    {
-        get => _lostFocusText;
-        set { _lostFocusText = value; OnPropertyChanged(); }
-    }
-
-    public string ExplicitText
-    {
-        get => _explicitText;
-        set { _explicitText = value; OnPropertyChanged(); }
-    }
-
-    public string PropertyChangedText
-    {
-        get => _propertyChangedText;
-        set { _propertyChangedText = value; OnPropertyChanged(); }
-    }
-
-    public string DefaultTriggerText
-    {
-        get => _defaultTriggerText;
-        set { _defaultTriggerText = value; OnPropertyChanged(); }
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-    protected void OnPropertyChanged([CallerMemberName] string name = null)
-    {
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-    }
 }

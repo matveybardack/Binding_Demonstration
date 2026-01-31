@@ -1,38 +1,20 @@
-﻿namespace Binding_Lab.ViewModels;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-public class OneTimeBindingViewModel : INotifyPropertyChanged
+namespace Binding_Lab.ViewModels;
+
+public partial class OneTimeBindingViewModel : ObservableObject
 {
-    private string _initialText = "";
-    private int _initialNumber = 100;
-    private int _initialNumberSquared = 0;
+    [ObservableProperty]
+    private string _initialText = "Задано в конструкторе";
 
-    public string InitialText
-    {
-        get => _initialText;
-        set { _initialText = value; OnPropertyChanged(); }
-    }
-    public int InitialNumber
-    {
-        get => _initialNumber;
-        set { _initialNumber = value; OnPropertyChanged(); }
-    }
+    [ObservableProperty]
+    private int _initialNumber = 200;
 
-    public int InitialNumberSquared
-    {
-        get => _initialNumberSquared;
-        set { _initialNumberSquared = value*value; OnPropertyChanged(); }
-    }
+    public int InitialNumberSquared => _initialNumber * _initialNumber;
 
     public OneTimeBindingViewModel()
     {
-        _initialText = "Задано в конструкторе";
-        _initialNumber = 200;
-        _initialNumberSquared = _initialNumber * _initialNumber;
-    }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-    protected void OnPropertyChanged([CallerMemberName] string name = null)
-    {
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        // Оповещаем об инициализации вычисляемого свойства
+        OnPropertyChanged(nameof(InitialNumberSquared));
     }
 }
