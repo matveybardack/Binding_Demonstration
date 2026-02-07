@@ -4,29 +4,37 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Binding_Lab.Tabs"
+             xmlns:loc="clr-namespace:CodingSeb.Localization.WPF;assembly=CodingSeb.Localization.WPF"
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="600">
     <UniformGrid Margin="10" Rows="4" Columns="4">
         <!--Привязка textbox (TwoWay)-->
-        <Label Content="Default TextBox 1:"/>
+        <Label Content="{loc:Tr 'DBlb1', DefaultText='TextBox'}"/>
         <TextBox Text="{Binding DefaultText, UpdateSourceTrigger=PropertyChanged}" Margin="5" VerticalAlignment="Top"/>
-        <Label Content="Log TextBox 1:"/>
+        <Label Content="{loc:Tr 'DBllb1', DefaultText='TextBox'}"/>
         <TextBlock Text="{Binding DefaultText, UpdateSourceTrigger=PropertyChanged}" Margin="5" VerticalAlignment="Top"/>
         
         <!-- Привязка CheckBox (TwoWay)-->
-        <Label Content="DefaultCheckBox:"/>
-        <CheckBox IsChecked="{Binding DefaultFlag}" Content="Check me" Margin="5" VerticalAlignment="Top"/>
-        <Label Content="Log CheckBox:"/>
-        <CheckBox IsChecked="{Binding DefaultFlag}" Content="I`m checked?" Margin="5" VerticalAlignment="Top" IsEnabled="False"/> <!-- Тут Привязка Oneway для демонстрации-->
-        
+        <Label Content="{loc:Tr 'DBlb2', DefaultText = 'DefaultCheckBox:'}"/>
+        <CheckBox IsChecked="{Binding DefaultFlag}" 
+                  Content="{loc:Tr 'DBchb1', DefaultText = 'Check me'}" 
+                  Margin="5" 
+                  VerticalAlignment="Top"/>
+        <Label Content="{loc:Tr 'DBllb2', DefaultText = 'Log CheckBox:'}"/>
+        <CheckBox IsChecked="{Binding DefaultFlag}" 
+                  Content="{loc:Tr 'DBchb2', DefaultText = 'I`m checked?'}" 
+                  Margin="5" 
+                  VerticalAlignment="Top" 
+                  IsEnabled="False"/>
+
         <!-- Привязка  ProgressBar (OneWay)-->
-        <Label Content="DefaultProgressBar:"/>
+        <Label Content="{loc:Tr 'DBlb3', DefaultText='DefaultProgressBar:'}"/>
         <ProgressBar x:Name="DefaultProgressBar" Value="{Binding DefaultProgress}" Height="20" Margin="5" VerticalAlignment="Top"/>
-        <Label Content="Log ProgressBar (direct):"/>
+        <Label Content="{loc:Tr 'DBllb3', DefaultText='Log ProgressBar (direct):'}"/>
         <TextBlock Text="{Binding Value, ElementName=DefaultProgressBar}" Margin="5" VerticalAlignment="Top"/>
 
         <!--Привязка картинки (OneTime)-->
-        <Label Content="DefaultImage:" />
+        <Label Content="{loc:Tr 'DBlb4', DefaultText='DefaultImage:'}" />
         <Image Source="/Resourse/no_resourse.jpg" Margin="5"/>
     </UniformGrid>
 </UserControl>

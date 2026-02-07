@@ -6,8 +6,10 @@
         xmlns:local="clr-namespace:Binding_Lab"
         xmlns:vm="clr-namespace:Binding_Lab.ViewModels"
         xmlns:tabs="clr-namespace:Binding_Lab.Tabs"
+        xmlns:loc="clr-namespace:CodingSeb.Localization.WPF;assembly=CodingSeb.Localization.WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="{loc:Tr 'MainWindowTitle'}" 
+        Height="450" Width="800">
     <Window.Resources>
         <!--Привязка по умолчанию-->
         <DataTemplate DataType="{x:Type vm:DefaultBindingViewModel}">
@@ -32,10 +34,29 @@
     </Window.Resources>
 
     <Grid>
-        <TabControl ItemsSource="{Binding Tabs}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Панель смены языка -->
+        <Border Grid.Row="0" Padding="10" Background="#F0F0F0" BorderBrush="#DDDDDD" BorderThickness="0,0,0,1">
+            <StackPanel Orientation="Horizontal" Margin="524,0,0,0">
+                <TextBlock Text="{loc:Tr 'LanguageSelectionHint'}" 
+                           VerticalAlignment="Center" 
+                           Margin="0,0,10,0"
+                           FontWeight="SemiBold"/>
+
+                <ComboBox Width="120"
+                          ItemsSource="{Binding AvailableLanguages}"
+                          SelectedItem="{Binding SelectedLanguage}"/>
+            </StackPanel>
+        </Border>
+
+        <TabControl Grid.Row="1" ItemsSource="{Binding Tabs}">
             <TabControl.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding Header}"/>
+                    <TextBlock Text="{Binding Header, UpdateSourceTrigger=PropertyChanged}"/>
                 </DataTemplate>
             </TabControl.ItemTemplate>
             <TabControl.ContentTemplate>

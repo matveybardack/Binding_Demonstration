@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CodingSeb.Localization;
 
 namespace Binding_Lab.ViewModels;
 

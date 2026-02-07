@@ -1,0 +1,66 @@
+{
+  "MainWindowTitle": {
+    "en": "Binding Laboratory",
+    "pr": "Лабораторная по привязкам"
+  },
+  "LanguageSelectionHint": {
+    "en": "Language:",
+    "pr": "Язык:"
+  },
+  "TabDefault": {
+    "en": "Default Binding",
+    "pr": "Привязка по умолчанию"
+  },
+  "TabTwoWay": {
+    "en": "Two-Way Binding",
+    "pr": "Двухсторонняя привязка"
+  },
+  "TabOneTime": {
+    "en": "One-Time Binding",
+    "pr": "Одноразовая привязка"
+  },
+  "TabOneWay": {
+    "en": "One-Way Binding",
+    "pr": "Односторонняя привязка"
+  },
+  "TabTriggers": {
+    "en": "Triggers",
+    "pr": "Триггеры"
+  },
+  "DBlb1": {
+    "en": "TextBox 1",
+    "pr": "Текстовое поле"
+  },
+  "DBllb1": {
+    "en": "Log TextBox 1",
+    "pr": "Лог текстового поля"
+  },
+  "DBlb2": {
+    "en": "DefaultCheckBox",
+    "pr": "Стандартный чекбокс"
+  },
+  "DBchb1": {
+    "en": "Check me",
+    "pr": "Выбери меня"
+  },
+  "DBllb2": {
+    "en": "Log CheckBox",
+    "pr": "Лог чекбокса"
+  },
+  "DBchb2": {
+    "en": "I`m checked?",
+    "pr": "Я выбран?"
+  },
+  "DBlb3": {
+    "en": "DefaultProgressBar",
+    "pr": "Стандартный прогрессбар"
+  },
+  "DBllb3": {
+    "en": "Log ProgressBar (direct)",
+    "pr": "Лог прогрессбара"
+  }
+  "DBlb4": {
+    "en": "DefaultImage",
+    "pr": "Стандартное изображение"
+  }
+}

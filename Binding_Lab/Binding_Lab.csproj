@@ -13,10 +13,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="CodingSeb.Localization.JsonFileLoader" Version="1.4.0" />
+    <PackageReference Include="CodingSeb.Localization.WPF" Version="1.4.1" />
+    <PackageReference Include="CodingSebLocalization.Fody" Version="1.4.0" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Locales\XAML.loc.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Resource Include="Resourse\no_resourse.jpg" />
   </ItemGroup>
 
