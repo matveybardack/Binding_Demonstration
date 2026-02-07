@@ -4,28 +4,33 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Binding_Lab.Tabs"
+             xmlns:loc="clr-namespace:CodingSeb.Localization.WPF;assembly=CodingSeb.Localization.WPF"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UniformGrid Rows="2" Columns="4" 
         Margin="10">
         <!-- OneTime TextBox 1 -->
-        <Label Content="OneTime TextBox 1:" Margin="0,0,3,15" VerticalAlignment="Top"/>
+        <Label Content="{loc:Tr 'OTlb1', DefaultText='OneTime TextBox 1:'}" 
+               Margin="0,0,3,15" VerticalAlignment="Top"/>
         <TextBox x:Name="OneTimeTextBox1" 
                  Text="{Binding InitialText, Mode=OneTime}" 
                  Margin="5,0,5,0" VerticalAlignment="Top"/>
 
         <!-- Log TextBox 1 -->
-        <Label Content="Log TextBox 1:" Margin="22,0,0,15" VerticalAlignment="Top"/>
+        <Label Content="{loc:Tr 'OTllb1', DefaultText='Log TextBox 1:'}" 
+               Margin="22,0,0,15" VerticalAlignment="Top"/>
         <TextBlock Text="{Binding InitialText, UpdateSourceTrigger=PropertyChanged}" 
                    Margin="5,0,5,0" VerticalAlignment="Top"/>
-        
+
         <!-- OneTime Operation-->
-        <Label Content="OneTime Operation:" Margin="0,15,3,0" VerticalAlignment="Top"/>
+        <Label Content="{loc:Tr 'OTlb2', DefaultText='OneTime Operation:'}" 
+               Margin="0,15,3,0" VerticalAlignment="Top"/>
         <TextBox x:Name="OnlyNumber" Text="{Binding InitialNumber, Mode=OneTime}" 
                  Margin="5,15,5,0" VerticalAlignment="Top"/>
 
         <!-- Log Operation -->
-        <Label Content="Square Number:" Margin="22,15,0,0" VerticalAlignment="Top"/>
+        <Label Content="{loc:Tr 'OTllb2', DefaultText='Square Number:'}" 
+               Margin="22,15,0,0" VerticalAlignment="Top"/>
         <TextBlock Text="{Binding InitialNumberSquared, UpdateSourceTrigger=PropertyChanged}" 
                    Margin="5,15,5,0" VerticalAlignment="Top"/>
     </UniformGrid>

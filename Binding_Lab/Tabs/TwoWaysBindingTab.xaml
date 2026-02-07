@@ -5,25 +5,30 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Binding_Lab.Tabs"
              xmlns:vm="clr-namespace:Binding_Lab.ViewModels"
+             xmlns:loc="clr-namespace:CodingSeb.Localization.WPF;assembly=CodingSeb.Localization.WPF"
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="600">
     <UniformGrid Margin="10" Rows="4" Columns="4">
         <!--Привязка textbox (TwoWay)-->
-        <Label Content="TwoWay TextBox 1:"/>
+        <Label Content="{loc:Tr 'TWlb1', DefaultText='TwoWay TextBox 1:'}"/>
         <TextBox Text="{Binding TwoWayText, UpdateSourceTrigger=PropertyChanged}" Margin="5" VerticalAlignment="Top"/>
-        <Label Content="Log TextBox 1:"/>
+        <Label Content="{loc:Tr 'TWllb1', DefaultText='Log TextBox 1:'}"/>
         <TextBox Text="{Binding TwoWayText, UpdateSourceTrigger=PropertyChanged}" Margin="5" VerticalAlignment="Top"/>
 
         <!-- Привязка CheckBox (TwoWay)-->
-        <Label Content="TwoWayCheckBox:"/>
-        <CheckBox IsChecked="{Binding TwoWayFlag}" Content="Check me" Margin="5" VerticalAlignment="Top"/>
-        <Label Content="Log TwoWayCheckBox:"/>
-        <CheckBox IsChecked="{Binding TwoWayFlag}" Content="I`m checked?" Margin="5" VerticalAlignment="Top"/>
-        
+        <Label Content="{loc:Tr 'TWlb2', DefaultText='TwoWayCheckBox:'}"/>
+        <CheckBox IsChecked="{Binding TwoWayFlag}" 
+                  Content="{loc:Tr 'TWchb1', DefaultText='Check me'}" 
+                  Margin="5" VerticalAlignment="Top"/>
+        <Label Content="{loc:Tr 'TWllb2', DefaultText='Log TwoWayCheckBox:'}"/>
+        <CheckBox IsChecked="{Binding TwoWayFlag}" 
+                  Content="{loc:Tr 'TWchb2', DefaultText='I`m checked?'}" 
+                  Margin="5" VerticalAlignment="Top"/>
+
         <!-- Привязка Slider (TwoWay)-->
-        <Label Content="TwoWay Slider:"/>
+        <Label Content="{loc:Tr 'TWlb3', DefaultText='TwoWay Slider:'}"/>
         <TextBox Text="{Binding TwoWayValue, UpdateSourceTrigger=PropertyChanged}" Margin="5" VerticalAlignment="Top"/>
-        <Label Content="Slider:"/>
+        <Label Content="{loc:Tr 'TWllb3', DefaultText='Slider:'}"/>
         <Slider Value="{Binding TwoWayValue, UpdateSourceTrigger=PropertyChanged}" Height="20" Margin="5" VerticalAlignment="Top" Maximum="100"/>
     </UniformGrid>
 </UserControl>

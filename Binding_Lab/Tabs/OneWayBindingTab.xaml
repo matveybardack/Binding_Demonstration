@@ -4,28 +4,33 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Binding_Lab.Tabs"
+             xmlns:loc="clr-namespace:CodingSeb.Localization.WPF;assembly=CodingSeb.Localization.WPF"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UniformGrid Rows="2" Columns="4" 
         Margin="10">
         <!-- OneWay TextBox 1 -->
-        <Label Content="OneWay TextBox 1:" Margin="0,0,3,15" VerticalAlignment="Top"/>
+        <Label Content="{loc:Tr 'OWlb1', DefaultText='OneWay TextBox 1:'}" 
+               Margin="0,0,3,15" VerticalAlignment="Top"/>
         <TextBox x:Name="OneTimeTextBox1" 
                  Text="{Binding SourceText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                  Margin="5,0,5,0" VerticalAlignment="Top"/>
 
         <!-- Log TextBox 1 -->
-        <Label Content="Log TextBox 1:" Margin="22,0,0,15" VerticalAlignment="Top"/>
+        <Label Content="{loc:Tr 'OWllb1', DefaultText='Log TextBox 1:'}" 
+               Margin="22,0,0,15" VerticalAlignment="Top"/>
         <TextBox Text="{Binding SourceText, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
                    Margin="5,0,5,0" VerticalAlignment="Top"/>
 
         <!-- TwoWay SliderNumber -->
-        <Label Content="OneTime Operation:" Margin="0,15,3,0" VerticalAlignment="Top"/>
+        <Label Content="{loc:Tr 'OWlb2', DefaultText='OneTime Operation:'}" 
+               Margin="0,15,3,0" VerticalAlignment="Top"/>
         <TextBox x:Name="OnlyNumber" Text="{Binding SourceValue, UpdateSourceTrigger=PropertyChanged}" 
                  Margin="5,15,5,0" VerticalAlignment="Top"/>
 
         <!-- Log SliderNumber -->
-        <Label Content="Slider change number:" Margin="22,15,0,0" VerticalAlignment="Top"/>
+        <Label Content="{loc:Tr 'OWllb2', DefaultText='Slider change number:'}" 
+               Margin="22,15,0,0" VerticalAlignment="Top"/>
         <Slider Minimum="0" Maximum="100" 
                 Value="{Binding SourceValue, Mode=OneWay}" 
                 Margin="5,15,5,0" VerticalAlignment="Top"/>

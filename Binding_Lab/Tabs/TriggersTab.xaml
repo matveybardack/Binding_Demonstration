@@ -5,55 +5,58 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Binding_Lab.Tabs"
              xmlns:vm="clr-namespace:Binding_Lab.ViewModels"
+             xmlns:loc="clr-namespace:CodingSeb.Localization.WPF;assembly=CodingSeb.Localization.WPF"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
     <UniformGrid Margin="10" Rows="7" Columns="4">
         <!-- Default UpdateSourceTrigger (PropertyChanged для TextBox.Text) -->
-        <Label Content="Default Trigger TextBox:"/>
+        <Label Content="{loc:Tr 'TRlb1', DefaultText='Default Trigger TextBox:'}"/>
         <TextBox Text="{Binding DefaultTriggerText}" Margin="5" VerticalAlignment="Top"/>
-        <Label Content="Log Default:"/>
+        <Label Content="{loc:Tr 'TRllb1', DefaultText='Log Default:'}"/>
         <TextBlock Text="{Binding DefaultTriggerText}" Margin="5" VerticalAlignment="Top"/>
 
         <!-- PropertyChanged Trigger -->
-        <Label Content="PropertyChanged Trigger:"/>
+        <Label Content="{loc:Tr 'TRlb2', DefaultText='PropertyChanged Trigger:'}"/>
         <TextBox Text="{Binding PropertyChangedText, UpdateSourceTrigger=PropertyChanged}" 
                  Margin="5" VerticalAlignment="Top"/>
-        <Label Content="Log PropertyChanged:"/>
+        <Label Content="{loc:Tr 'TRllb2', DefaultText='Log PropertyChanged:'}"/>
         <TextBlock Text="{Binding PropertyChangedText}" Margin="5" VerticalAlignment="Top"/>
 
         <!-- Explicit Trigger -->
-        <Label Content="Explicit Trigger TextBox:"/>
+        <Label Content="{loc:Tr 'TRlb3', DefaultText='Explicit Trigger TextBox:'}"/>
         <TextBox x:Name="ExplicitTextBox" Text="{Binding ExplicitText, UpdateSourceTrigger=Explicit}" 
                  Margin="5" VerticalAlignment="Top"/>
-        <Label Content="Log Explicit:"/>
+        <Label Content="{loc:Tr 'TRllb3', DefaultText='Log Explicit:'}"/>
         <TextBlock Text="{Binding ExplicitText}" Margin="5" VerticalAlignment="Top"/>
 
         <!-- LostFocus Trigger -->
-        <Label Content="LostFocus Trigger TextBox:"/>
+        <Label Content="{loc:Tr 'TRlb4', DefaultText='LostFocus Trigger TextBox:'}"/>
         <TextBox Text="{Binding LostFocusText, UpdateSourceTrigger=LostFocus}" 
                  Margin="5" VerticalAlignment="Top"/>
-        <Label Content="Log LostFocus:"/>
+        <Label Content="{loc:Tr 'TRllb4', DefaultText='Log LostFocus:'}"/>
         <TextBlock Text="{Binding LostFocusText}" Margin="5" VerticalAlignment="Top"/>
 
         <!-- Кнопка для Explicit триггера -->
-        <Label Content="Apply Explicit:"/>
-        <Button Content="Применить" Click="ApplyExplicitButton_Click" 
+        <Label Content="{loc:Tr 'TRlb5', DefaultText='Apply Explicit:'}"/>
+        <Button Content="{loc:Tr 'TRbtn1', DefaultText='Применить'}" 
+                Click="ApplyExplicitButton_Click" 
                 Margin="5" VerticalAlignment="Top"/>
 
         <!-- Slider для демонстрации PropertyChanged -->
-        <Label Content="Slider (PropertyChanged):"/>
+        <Label Content="{loc:Tr 'TRlb6', DefaultText='Slider (PropertyChanged):'}"/>
         <Slider Value="{Binding SliderValue, UpdateSourceTrigger=PropertyChanged}" 
                 Minimum="0" Maximum="100" Margin="5" VerticalAlignment="Top"/>
-        <Label Content="Log Slider:"/>
+        <Label Content="{loc:Tr 'TRllb5', DefaultText='Log Slider:'}"/>
         <TextBlock Text="{Binding SliderValue, StringFormat='{}{0:F1}'}" 
                    Margin="5" VerticalAlignment="Top"/>
 
         <!-- CheckBox с LostFocus -->
-        <Label Content="CheckBox (LostFocus):"/>
+        <Label Content="{loc:Tr 'TRlb7', DefaultText='CheckBox (LostFocus):'}"/>
         <CheckBox IsChecked="{Binding CheckBoxValue, UpdateSourceTrigger=LostFocus}" 
-                  Content="Отметь меня" Margin="5" VerticalAlignment="Top"/>
-        <Label Content="Log CheckBox:"/>
+                  Content="{loc:Tr 'TRchb1', DefaultText='Отметь меня'}" 
+                  Margin="5" VerticalAlignment="Top"/>
+        <Label Content="{loc:Tr 'TRllb6', DefaultText='Log CheckBox:'}"/>
         <TextBlock Text="{Binding CheckBoxValue}" Margin="5" VerticalAlignment="Top"/>
     </UniformGrid>
 </UserControl>

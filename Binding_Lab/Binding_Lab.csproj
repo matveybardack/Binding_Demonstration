@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Locales\OneTimeBinding.loc.json" />
+    <None Remove="Locales\OneWayBinding.loc.json" />
+    <None Remove="Locales\Triggers.loc.json" />
+    <None Remove="Locales\TwoWayBinding.loc.json" />
     <None Remove="Resourse\no_resourse.jpg" />
   </ItemGroup>
 
@@ -20,7 +24,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Locales\XAML.loc.json">
+    <Content Include="Locales\DefaultBinding.loc.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Locales\OneTimeBinding.loc.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Locales\OneWayBinding.loc.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Locales\Triggers.loc.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Locales\TwoWayBinding.loc.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Resource Include="Resourse\no_resourse.jpg" />
