@@ -61,11 +61,29 @@ namespace Binding_Lab.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Language.
+        /// </summary>
+        public static string LanguageSelectionHint {
+            get {
+                return ResourceManager.GetString("LanguageSelectionHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на BindingLab.
         /// </summary>
         public static string MainWindowTitle {
             get {
                 return ResourceManager.GetString("MainWindowTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на TabDefault.
+        /// </summary>
+        public static string TabDefault {
+            get {
+                return ResourceManager.GetString("TabDefault", resourceCulture);
             }
         }
     }

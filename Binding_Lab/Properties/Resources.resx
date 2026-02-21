@@ -117,7 +117,160 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="MainWindowTitle" xml:space="preserve">
-    <value>BindingLab</value>
-  </data>
+<data name="MainWindowTitle" xml:space="preserve">
+  <value>Binding Laboratory</value>
+</data>
+<data name="LanguageSelectionHint" xml:space="preserve">
+  <value>Language:</value>
+</data>
+<data name="TabDefault" xml:space="preserve">
+  <value>Default Binding</value>
+</data>
+<data name="TabTwoWay" xml:space="preserve">
+  <value>Two-Way Binding</value>
+</data>
+<data name="TabOneTime" xml:space="preserve">
+  <value>One-Time Binding</value>
+</data>
+<data name="TabOneWay" xml:space="preserve">
+  <value>One-Way Binding</value>
+</data>
+<data name="TabTriggers" xml:space="preserve">
+  <value>Triggers</value>
+</data>
+<data name="DBlb1" xml:space="preserve">
+  <value>TextBox 1</value>
+</data>
+<data name="DBllb1" xml:space="preserve">
+  <value>Log TextBox 1</value>
+</data>
+<data name="DBlb2" xml:space="preserve">
+  <value>DefaultCheckBox</value>
+</data>
+<data name="DBchb1" xml:space="preserve">
+  <value>Check me</value>
+</data>
+<data name="DBllb2" xml:space="preserve">
+  <value>Log CheckBox</value>
+</data>
+<data name="DBchb2" xml:space="preserve">
+  <value>I`m checked?</value>
+</data>
+<data name="DBlb3" xml:space="preserve">
+  <value>DefaultProgressBar</value>
+</data>
+<data name="DBllb3" xml:space="preserve">
+  <value>Log ProgressBar (direct)</value>
+</data>
+<data name="DBlb4" xml:space="preserve">
+  <value>DefaultImage</value>
+</data>
+<data name="DBtxtvm1" xml:space="preserve">
+  <value>Default text</value>
+</data>
+<data name="OTlb1" xml:space="preserve">
+  <value>OneTime TextBox 1:</value>
+</data>
+<data name="OTllb1" xml:space="preserve">
+  <value>Log TextBox 1:</value>
+</data>
+<data name="OTlb2" xml:space="preserve">
+  <value>OneTime Operation:</value>
+</data>
+<data name="OTllb2" xml:space="preserve">
+  <value>Square Number:</value>
+</data>
+<data name="OTBtxtvm1" xml:space="preserve">
+  <value>In constructor</value>
+</data>
+<data name="OWlb1" xml:space="preserve">
+  <value>OneWay TextBox 1:</value>
+</data>
+<data name="OWllb1" xml:space="preserve">
+  <value>Log TextBox 1:</value>
+</data>
+<data name="OWlb2" xml:space="preserve">
+  <value>OneWay Operation:</value>
+</data>
+<data name="OWllb2" xml:space="preserve">
+  <value>Slider change number:</value>
+</data>
+<data name="OWtxtvm1" xml:space="preserve">
+  <value>Source text</value>
+</data>
+<data name="TRlb1" xml:space="preserve">
+  <value>Default Trigger TextBox:</value>
+</data>
+<data name="TRllb1" xml:space="preserve">
+  <value>Log Default:</value>
+</data>
+<data name="TRlb2" xml:space="preserve">
+  <value>PropertyChanged Trigger:</value>
+</data>
+<data name="TRllb2" xml:space="preserve">
+  <value>Log PropertyChanged:</value>
+</data>
+<data name="TRlb3" xml:space="preserve">
+  <value>Explicit Trigger TextBox:</value>
+</data>
+<data name="TRllb3" xml:space="preserve">
+  <value>Log Explicit:</value>
+</data>
+<data name="TRlb4" xml:space="preserve">
+  <value>LostFocus Trigger TextBox:</value>
+</data>
+<data name="TRllb4" xml:space="preserve">
+  <value>Log LostFocus:</value>
+</data>
+<data name="TRlb5" xml:space="preserve">
+  <value>Apply Explicit:</value>
+</data>
+<data name="TRbtn1" xml:space="preserve">
+  <value>Apply</value>
+</data>
+<data name="TRlb6" xml:space="preserve">
+  <value>Slider (PropertyChanged):</value>
+</data>
+<data name="TRllb5" xml:space="preserve">
+  <value>Log Slider:</value>
+</data>
+<data name="TRlb7" xml:space="preserve">
+  <value>CheckBox (LostFocus):</value>
+</data>
+<data name="TRchb1" xml:space="preserve">
+  <value>Check me</value>
+</data>
+<data name="TRllb6" xml:space="preserve">
+  <value>Log CheckBox:</value>
+</data>
+<data name="TRtxtvmall" xml:space="preserve">
+  <value>DefaultTriggerText</value>
+</data>
+<data name="TWlb1" xml:space="preserve">
+  <value>TwoWay TextBox 1:</value>
+</data>
+<data name="TWllb1" xml:space="preserve">
+  <value>Log TextBox 1:</value>
+</data>
+<data name="TWlb2" xml:space="preserve">
+  <value>TwoWayCheckBox:</value>
+</data>
+<data name="TWchb1" xml:space="preserve">
+  <value>Check me</value>
+</data>
+<data name="TWllb2" xml:space="preserve">
+  <value>Log TwoWayCheckBox:</value>
+</data>
+<data name="TWchb2" xml:space="preserve">
+  <value>I`m checked?</value>
+</data>
+<data name="TWlb3" xml:space="preserve">
+  <value>TwoWay Slider:</value>
+</data>
+<data name="TWllb3" xml:space="preserve">
+  <value>Slider:</value>
+</data>
+<data name="TWtxtvm1" xml:space="preserve">
+  <value>DefaultTwoWayText</value>
+</data>
 </root>

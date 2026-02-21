@@ -117,7 +117,160 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="MainWindowTitle" xml:space="preserve">
-    <value>Окно</value>
-  </data>
+<data name="MainWindowTitle" xml:space="preserve">
+  <value>Лабораторная по привязкам</value>
+</data>
+<data name="LanguageSelectionHint" xml:space="preserve">
+  <value>Язык:</value>
+</data>
+<data name="TabDefault" xml:space="preserve">
+  <value>Привязка по умолчанию</value>
+</data>
+<data name="TabTwoWay" xml:space="preserve">
+  <value>Двухсторонняя привязка</value>
+</data>
+<data name="TabOneTime" xml:space="preserve">
+  <value>Одноразовая привязка</value>
+</data>
+<data name="TabOneWay" xml:space="preserve">
+  <value>Односторонняя привязка</value>
+</data>
+<data name="TabTriggers" xml:space="preserve">
+  <value>Триггеры</value>
+</data>
+<data name="DBlb1" xml:space="preserve">
+  <value>Текстовое поле</value>
+</data>
+<data name="DBllb1" xml:space="preserve">
+  <value>Лог текстового поля</value>
+</data>
+<data name="DBlb2" xml:space="preserve">
+  <value>Стандартный чекбокс</value>
+</data>
+<data name="DBchb1" xml:space="preserve">
+  <value>Выбери меня</value>
+</data>
+<data name="DBllb2" xml:space="preserve">
+  <value>Лог чекбокса</value>
+</data>
+<data name="DBchb2" xml:space="preserve">
+  <value>Я выбран?</value>
+</data>
+<data name="DBlb3" xml:space="preserve">
+  <value>Стандартный прогрессбар</value>
+</data>
+<data name="DBllb3" xml:space="preserve">
+  <value>Лог прогрессбара</value>
+</data>
+<data name="DBlb4" xml:space="preserve">
+  <value>Стандартное изображение</value>
+</data>
+<data name="DBtxtvm1" xml:space="preserve">
+  <value>Текст по умолчанию</value>
+</data>
+<data name="OTlb1" xml:space="preserve">
+  <value>текстовое поле 1:</value>
+</data>
+<data name="OTllb1" xml:space="preserve">
+  <value>Лог текстового поля 1:</value>
+</data>
+<data name="OTlb2" xml:space="preserve">
+  <value>Оперируемое число:</value>
+</data>
+<data name="OTllb2" xml:space="preserve">
+  <value>Квадрат числа:</value>
+</data>
+<data name="OTBtxtvm1" xml:space="preserve">
+  <value>Задано в конструкторе</value>
+</data>
+<data name="OWlb1" xml:space="preserve">
+  <value>OneWay текстовое поле 1:</value>
+</data>
+<data name="OWllb1" xml:space="preserve">
+  <value>Лог текстового поля 1:</value>
+</data>
+<data name="OWlb2" xml:space="preserve">
+  <value>OneWay операция:</value>
+</data>
+<data name="OWllb2" xml:space="preserve">
+  <value>Изменение числа слайдером:</value>
+</data>
+<data name="OWtxtvm1" xml:space="preserve">
+  <value>Источник данных</value>
+</data>
+<data name="TRlb1" xml:space="preserve">
+  <value>Триггер по умолчанию TextBox:</value>
+</data>
+<data name="TRllb1" xml:space="preserve">
+  <value>Лог по умолчанию:</value>
+</data>
+<data name="TRlb2" xml:space="preserve">
+  <value>Триггер PropertyChanged:</value>
+</data>
+<data name="TRllb2" xml:space="preserve">
+  <value>Лог PropertyChanged:</value>
+</data>
+<data name="TRlb3" xml:space="preserve">
+  <value>Явный триггер TextBox:</value>
+</data>
+<data name="TRllb3" xml:space="preserve">
+  <value>Лог явного:</value>
+</data>
+<data name="TRlb4" xml:space="preserve">
+  <value>Триггер LostFocus TextBox:</value>
+</data>
+<data name="TRllb4" xml:space="preserve">
+  <value>Лог LostFocus:</value>
+</data>
+<data name="TRlb5" xml:space="preserve">
+  <value>Применить явный:</value>
+</data>
+<data name="TRbtn1" xml:space="preserve">
+  <value>Применить</value>
+</data>
+<data name="TRlb6" xml:space="preserve">
+  <value>Слайдер (PropertyChanged):</value>
+</data>
+<data name="TRllb5" xml:space="preserve">
+  <value>Лог слайдера:</value>
+</data>
+<data name="TRlb7" xml:space="preserve">
+  <value>Чекбокс (LostFocus):</value>
+</data>
+<data name="TRchb1" xml:space="preserve">
+  <value>Отметь меня</value>
+</data>
+<data name="TRllb6" xml:space="preserve">
+  <value>Лог чекбокса:</value>
+</data>
+<data name="TRtxtvmall" xml:space="preserve">
+  <value>Стандартный текст</value>
+</data>
+<data name="TWlb1" xml:space="preserve">
+  <value>TwoWay текстовое поле 1:</value>
+</data>
+<data name="TWllb1" xml:space="preserve">
+  <value>Лог текстового поля 1:</value>
+</data>
+<data name="TWlb2" xml:space="preserve">
+  <value>TwoWay чекбокс:</value>
+</data>
+<data name="TWchb1" xml:space="preserve">
+  <value>Выбери меня</value>
+</data>
+<data name="TWllb2" xml:space="preserve">
+  <value>Лог TwoWay чекбокса:</value>
+</data>
+<data name="TWchb2" xml:space="preserve">
+  <value>Я выбран?</value>
+</data>
+<data name="TWlb3" xml:space="preserve">
+  <value>TwoWay слайдер:</value>
+</data>
+<data name="TWllb3" xml:space="preserve">
+  <value>Слайдер:</value>
+</data>
+<data name="TWtxtvm1" xml:space="preserve">
+  <value>Стандартный текст</value>
+</data>
 </root>

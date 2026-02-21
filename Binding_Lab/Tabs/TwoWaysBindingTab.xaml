@@ -9,21 +9,26 @@
              d:DesignHeight="400" d:DesignWidth="600">
     <UniformGrid Margin="10" Rows="4" Columns="4">
         <!--Привязка textbox (TwoWay)-->
-        <Label Content="TwoWay TextBox 1:"/>
+        <Label Content="{Binding Localization[TWlb1]}"/>
         <TextBox Text="{Binding TwoWayText, UpdateSourceTrigger=PropertyChanged}" Margin="5" VerticalAlignment="Top"/>
-        <Label Content="Log TextBox 1:"/>
+        <Label Content="{Binding Localization[TWllb1]}"/>
         <TextBox Text="{Binding TwoWayText, UpdateSourceTrigger=PropertyChanged}" Margin="5" VerticalAlignment="Top"/>
 
         <!-- Привязка CheckBox (TwoWay)-->
-        <Label Content="TwoWayCheckBox:"/>
-        <CheckBox IsChecked="{Binding TwoWayFlag}" Content="Check me" Margin="5" VerticalAlignment="Top"/>
-        <Label Content="Log TwoWayCheckBox:"/>
-        <CheckBox IsChecked="{Binding TwoWayFlag}" Content="I`m checked?" Margin="5" VerticalAlignment="Top"/>
-        
+        <Label Content="{Binding Localization[TWlb2]}"/>
+        <CheckBox IsChecked="{Binding TwoWayFlag}" 
+          Content="{Binding Localization[TWchb1]}" 
+          Margin="5" VerticalAlignment="Top"/>
+        <Label Content="{Binding Localization[TWllb2]}"/>
+        <CheckBox IsChecked="{Binding TwoWayFlag}" 
+          Content="{Binding Localization[TWchb2]}" 
+          Margin="5" VerticalAlignment="Top"/>
+
         <!-- Привязка Slider (TwoWay)-->
-        <Label Content="TwoWay Slider:"/>
+        <Label Content="{Binding Localization[TWlb3]}"/>
         <TextBox Text="{Binding TwoWayValue, UpdateSourceTrigger=PropertyChanged}" Margin="5" VerticalAlignment="Top"/>
-        <Label Content="Slider:"/>
+        <Label Content="{Binding Localization[TWllb3]}"/>
         <Slider Value="{Binding TwoWayValue, UpdateSourceTrigger=PropertyChanged}" Height="20" Margin="5" VerticalAlignment="Top" Maximum="100"/>
+
     </UniformGrid>
 </UserControl>

@@ -1,9 +1,12 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using Binding_Lab.Resourse;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace Binding_Lab.ViewModels;
 
 public partial class DefaultBindingViewModel : ObservableObject
 {
+    public MyLoc Localization => MyLoc.Instance;
+
     [ObservableProperty]
     private string _defaultText = "Текст по умолчанию";
 
@@ -12,4 +15,12 @@ public partial class DefaultBindingViewModel : ObservableObject
 
     [ObservableProperty]
     private bool _defaultFlag = true;
+
+    public DefaultBindingViewModel()
+    {
+        Localization.PropertyChanged += (s, e) =>
+        {
+            DefaultText = Localization["DBtxtvm1"];
+        };
+    }
 }
