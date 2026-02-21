@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using Binding_Lab.Resourse;
 
 namespace Binding_Lab
 {
