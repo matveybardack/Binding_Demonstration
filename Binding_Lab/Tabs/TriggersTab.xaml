@@ -10,50 +10,53 @@
 
     <UniformGrid Margin="10" Rows="7" Columns="4">
         <!-- Default UpdateSourceTrigger (PropertyChanged для TextBox.Text) -->
-        <Label Content="Default Trigger TextBox:"/>
+        <Label Content="{DynamicResource TRlb1}"/>
         <TextBox Text="{Binding DefaultTriggerText}" Margin="5" VerticalAlignment="Top"/>
-        <Label Content="Log Default:"/>
+        <Label Content="{DynamicResource TRllb1}"/>
         <TextBlock Text="{Binding DefaultTriggerText}" Margin="5" VerticalAlignment="Top"/>
 
         <!-- PropertyChanged Trigger -->
-        <Label Content="PropertyChanged Trigger:"/>
+        <Label Content="{DynamicResource TRlb2}"/>
         <TextBox Text="{Binding PropertyChangedText, UpdateSourceTrigger=PropertyChanged}" 
-                 Margin="5" VerticalAlignment="Top"/>
-        <Label Content="Log PropertyChanged:"/>
+         Margin="5" VerticalAlignment="Top"/>
+        <Label Content="{DynamicResource TRllb2}"/>
         <TextBlock Text="{Binding PropertyChangedText}" Margin="5" VerticalAlignment="Top"/>
 
         <!-- Explicit Trigger -->
-        <Label Content="Explicit Trigger TextBox:"/>
+        <Label Content="{DynamicResource TRlb3}"/>
         <TextBox x:Name="ExplicitTextBox" Text="{Binding ExplicitText, UpdateSourceTrigger=Explicit}" 
-                 Margin="5" VerticalAlignment="Top"/>
-        <Label Content="Log Explicit:"/>
+         Margin="5" VerticalAlignment="Top"/>
+        <Label Content="{DynamicResource TRllb3}"/>
         <TextBlock Text="{Binding ExplicitText}" Margin="5" VerticalAlignment="Top"/>
 
         <!-- LostFocus Trigger -->
-        <Label Content="LostFocus Trigger TextBox:"/>
+        <Label Content="{DynamicResource TRlb4}"/>
         <TextBox Text="{Binding LostFocusText, UpdateSourceTrigger=LostFocus}" 
-                 Margin="5" VerticalAlignment="Top"/>
-        <Label Content="Log LostFocus:"/>
+         Margin="5" VerticalAlignment="Top"/>
+        <Label Content="{DynamicResource TRllb4}"/>
         <TextBlock Text="{Binding LostFocusText}" Margin="5" VerticalAlignment="Top"/>
 
         <!-- Кнопка для Explicit триггера -->
-        <Label Content="Apply Explicit:"/>
-        <Button Content="Применить" Click="ApplyExplicitButton_Click" 
-                Margin="5" VerticalAlignment="Top"/>
+        <Label Content="{DynamicResource TRlb5}"/>
+        <Button Content="{DynamicResource TRbtn1}" 
+        Click="ApplyExplicitButton_Click" 
+        Margin="5" VerticalAlignment="Top"/>
 
         <!-- Slider для демонстрации PropertyChanged -->
-        <Label Content="Slider (PropertyChanged):"/>
+        <Label Content="{DynamicResource TRlb6}"/>
         <Slider Value="{Binding SliderValue, UpdateSourceTrigger=PropertyChanged}" 
-                Minimum="0" Maximum="100" Margin="5" VerticalAlignment="Top"/>
-        <Label Content="Log Slider:"/>
+        Minimum="0" Maximum="100" Margin="5" VerticalAlignment="Top"/>
+        <Label Content="{DynamicResource TRllb5}"/>
         <TextBlock Text="{Binding SliderValue, StringFormat='{}{0:F1}'}" 
-                   Margin="5" VerticalAlignment="Top"/>
+           Margin="5" VerticalAlignment="Top"/>
 
         <!-- CheckBox с LostFocus -->
-        <Label Content="CheckBox (LostFocus):"/>
+        <Label Content="{DynamicResource TRlb7}"/>
         <CheckBox IsChecked="{Binding CheckBoxValue, UpdateSourceTrigger=LostFocus}" 
-                  Content="Отметь меня" Margin="5" VerticalAlignment="Top"/>
-        <Label Content="Log CheckBox:"/>
+          Content="{DynamicResource TRchb1}" 
+          Margin="5" VerticalAlignment="Top"/>
+        <Label Content="{DynamicResource TRllb6}"/>
         <TextBlock Text="{Binding CheckBoxValue}" Margin="5" VerticalAlignment="Top"/>
+
     </UniformGrid>
 </UserControl>

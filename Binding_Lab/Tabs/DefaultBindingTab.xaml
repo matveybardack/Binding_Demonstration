@@ -8,32 +8,33 @@
              d:DesignHeight="400" d:DesignWidth="600">
     <UniformGrid Margin="10" Rows="4" Columns="4">
         <!--Привязка textbox (TwoWay)-->
-        <Label Content="TextBox"/>
+        <Label Content="{DynamicResource DBlb1}"/>
         <TextBox Text="{Binding DefaultText, UpdateSourceTrigger=PropertyChanged}" Margin="5" VerticalAlignment="Top"/>
-        <Label Content="TextBox"/>
+        <Label Content="{DynamicResource DBllb1}"/>
         <TextBlock Text="{Binding DefaultText, UpdateSourceTrigger=PropertyChanged}" Margin="5" VerticalAlignment="Top"/>
-        
+
         <!-- Привязка CheckBox (TwoWay)-->
-        <Label Content="DefaultCheckBox:"/>
+        <Label Content="{DynamicResource DBlb2}"/>
         <CheckBox IsChecked="{Binding DefaultFlag}" 
-                  Content="Check me" 
-                  Margin="5" 
-                  VerticalAlignment="Top"/>
-        <Label Content="Log CheckBox:"/>
+          Content="{DynamicResource DBchb1}" 
+          Margin="5" 
+          VerticalAlignment="Top"/>
+        <Label Content="{DynamicResource DBllb2}"/>
         <CheckBox IsChecked="{Binding DefaultFlag}" 
-                  Content="I`m checked?" 
-                  Margin="5" 
-                  VerticalAlignment="Top" 
-                  IsEnabled="False"/>
+          Content="{DynamicResource DBchb2}" 
+          Margin="5" 
+          VerticalAlignment="Top" 
+          IsEnabled="False"/>
 
         <!-- Привязка  ProgressBar (OneWay)-->
-        <Label Content="DefaultProgressBar:"/>
+        <Label Content="{DynamicResource DBlb3}"/>
         <ProgressBar x:Name="DefaultProgressBar" Value="{Binding DefaultProgress}" Height="20" Margin="5" VerticalAlignment="Top"/>
-        <Label Content="Log ProgressBar (direct):"/>
+        <Label Content="{DynamicResource DBllb3}"/>
         <TextBlock Text="{Binding Value, ElementName=DefaultProgressBar}" Margin="5" VerticalAlignment="Top"/>
 
         <!--Привязка картинки (OneTime)-->
-        <Label Content="DefaultImage:" />
+        <Label Content="{DynamicResource DBlb4}" />
         <Image Source="/Resourse/no_resourse.jpg" Margin="5"/>
+
     </UniformGrid>
 </UserControl>

@@ -1,5 +1,6 @@
 ﻿global using System.ComponentModel;
 global using System.Runtime.CompilerServices;
+using Binding_Lab.Resourse;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System.Collections.ObjectModel;
@@ -16,16 +17,18 @@ namespace Binding_Lab.ViewModels
         [ObservableProperty]
         private string _selectedLanguage = "en";
 
+        public LocalizationService loc = new();
+
         partial void OnSelectedLanguageChanged(string value)
         {
-            // Смена языка
+            LocalizationManager.ChangeLanguage(SelectedLanguage);
         }
 
         private void UpdateTabHeaders()
         {
             foreach (var tab in Tabs)
             {
-                // Обновление заголовков
+                tab.Header = loc[tab.LocalizationKey];
             }
         }
 
@@ -65,6 +68,11 @@ namespace Binding_Lab.ViewModels
                 Header = "TabTriggers",
                 ContentViewModel = new TriggersViewModel()
             });
+
+            LocalizationService.Instance.PropertyChanged += (s, e) =>
+            {
+                    UpdateTabHeaders();
+            };
         }
     }
 
