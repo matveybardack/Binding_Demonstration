@@ -1,6 +1,5 @@
 ﻿global using System.ComponentModel;
 global using System.Runtime.CompilerServices;
-using CodingSeb.Localization;
 using CommunityToolkit.Mvvm.ComponentModel;
 using System.Collections.ObjectModel;
 
@@ -9,70 +8,43 @@ namespace Binding_Lab.ViewModels
     public partial class MainViewModel : ObservableObject
     {
         public ObservableCollection<TabItemViewModel> Tabs { get; } = [];
-        public ObservableCollection<string> AvailableLanguages { get; } = Loc.Instance.AvailableLanguages;
-
-        [ObservableProperty]
-        private string _selectedLanguage;
 
         public MainViewModel()
         {
-            _selectedLanguage = Loc.Instance.CurrentLanguage;
-
-            if (string.IsNullOrEmpty(Loc.Instance.CurrentLanguage))
-                Loc.Instance.CurrentLanguage = _selectedLanguage;
-
-
             Tabs.Add(new TabItemViewModel
             {
                 LocalizationKey = "TabDefault",
-                Header = Loc.Tr("TabDefault"),
+                Header = "TabDefault",
                 ContentViewModel = new DefaultBindingViewModel()
             });
 
             Tabs.Add(new TabItemViewModel
             {
                 LocalizationKey = "TabTwoWay",
-                Header = Loc.Tr("TabTwoWay"),
+                Header = "TabTwoWay",
                 ContentViewModel = new TwoWaysBindingViewModel()
             });
 
             Tabs.Add(new TabItemViewModel
             {
                 LocalizationKey = "TabOneTime",
-                Header = Loc.Tr("TabOneTime"),
+                Header = "TabOneTime",
                 ContentViewModel = new OneTimeBindingViewModel()
             });
 
             Tabs.Add(new TabItemViewModel
             {
                 LocalizationKey = "TabOneWay",
-                Header = Loc.Tr("TabOneWay"),
+                Header = "TabOneWay",
                 ContentViewModel = new OneWayBindingViewModel()
             });
 
             Tabs.Add(new TabItemViewModel
             {
                 LocalizationKey = "TabTriggers",
-                Header = Loc.Tr("TabTriggers"),
+                Header = "TabTriggers",
                 ContentViewModel = new TriggersViewModel()
             });
-
-            Loc.Instance.CurrentLanguageChanged += (o, e) => UpdateTabHeaders();
-        }
-
-        partial void OnSelectedLanguageChanged(string value)
-        {
-            if (!string.IsNullOrEmpty(value))
-                Loc.Instance.CurrentLanguage = value;
-        }
-
-        private void UpdateTabHeaders()
-        {
-            foreach (var tab in Tabs)
-            {
-                if (!string.IsNullOrEmpty(tab.LocalizationKey))
-                    tab.Header = Loc.Tr(tab.LocalizationKey);
-            }
         }
     }
 
